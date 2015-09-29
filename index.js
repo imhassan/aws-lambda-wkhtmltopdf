@@ -32,7 +32,7 @@ exports.handler = function(event, context) {
 					filename : output_filename
 				};
 				// context.succeed("File has been uploaded");
-				context.done("File has been uploaded", return_data);
+				context.done(null, return_data);
 			});
 
 		}).pipe(writeStream);
