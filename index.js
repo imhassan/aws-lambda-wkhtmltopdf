@@ -31,14 +31,14 @@ exports.handler = function(event, context) {
 				return_data = {
 					filename : output_filename
 				};
-				// context.succeed(return_data);
-				context.done(return_data);
+				// context.succeed("File has been uploaded");
+				context.done("File has been uploaded", return_data);
 			});
 
 		}).pipe(writeStream);
 	} else {
 		console.log('error');
-		context.done();
+		context.done('unable to get the html', {});
 	}
 
 };
